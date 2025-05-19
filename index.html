@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SecureMe – Password Vault</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>🔐 SecureMe</h1>
+        <button id="toggleTheme">🌙</button>
+    </header>
+
+    <main>
+        <section id="form-section">
+            <input type="password" id="masterKey" placeholder="Enter Master Password 🔑" required />
+            <h2>Add Password</h2>
+            <form id="passwordForm">
+                <input type="text" id="site" placeholder="Website" required />
+                <input type="text" id="username" placeholder="Username/Email" required />
+                <input type="password" id="password" placeholder="Password" required />
+                <meter max="100" id="strengthMeter"></meter>
+                <button type="submit">Add Entry</button>
+            </form>
+            <button id="generatePassword">Generate Password 🎲</button>
+        </section>
+
+        <section id="vault-section">
+            <h2>Your Vault</h2>
+            <input type="text" id="search" placeholder="Search entries..." />
+            <div id="vaultList"></div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
